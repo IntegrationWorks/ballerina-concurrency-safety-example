@@ -10,15 +10,10 @@ isolated class Cat
 
     isolated function getCat(string n, string c, int a)
     {
+        // The lock statement can reference multiple non-isolated variables without issue.
         lock {
             self.name = n;
-        }
-
-        lock {
             self.colour = c;
-        }
-
-        lock {
             self.age = a;
         }
 
